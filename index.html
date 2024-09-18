@@ -50,6 +50,12 @@
     .button-wrapper a img, .button-wrapper2 a img {
       height: 70px;
       width: auto;
+      transition: transform 0.3s ease;  /* Smooth transition for hover */
+    }
+
+    /* Button hover effect: Enlarge when hovered */
+    .button-wrapper a img:hover, .button-wrapper2 a img:hover {
+      transform: scale(1.1);  /* Enlarge button on hover */
     }
 
     .image-wrapper {
@@ -143,10 +149,12 @@
   let currentButtonIndex = 0;  // Track currently focused button
   let currentSection = 0;      // 0 for button section 1, 1 for button section 2
   let buttons = [];            // Store interactive buttons
+  let buttonSections = [];     // Store both button sections
 
   window.addEventListener('DOMContentLoaded', () => {
     // Store all the clickable buttons
     buttons = document.querySelectorAll('a.thumbnail');
+    buttonSections = [document.querySelector('.button-wrapper'), document.querySelector('.button-wrapper2')]; 
   });
 
   // Remove mouse-triggered focus styling
@@ -158,10 +166,10 @@
   window.addEventListener('keydown', function(e) {
     switch (e.key) {
       case 'ArrowRight':
-        if (currentSection === 0) navigateButtons(1);  // Move to the next button
+        if (currentSection === 0 || currentSection === 1) navigateButtons(1);  // Move to the next button
         break;
       case 'ArrowLeft':
-        if (currentSection === 0) navigateButtons(-1);  // Move to the previous button
+        if (currentSection === 0 || currentSection === 1) navigateButtons(-1);  // Move to the previous button
         break;
       case 'ArrowUp':
         navigateSections(-1);  // Switch between button sections
@@ -170,7 +178,7 @@
         navigateSections(1);   // Switch between button sections
         break;
       case 'Enter':
-        if (currentSection === 0) {
+        if (currentSection === 0 || currentSection === 1) {
           buttons[currentButtonIndex].click();  // Trigger button click on Enter
         }
         break;
@@ -200,9 +208,9 @@
     }
 
     if (gp.axes[0] > 0.5) {  // Move right with the left stick
-      if (currentSection === 0) navigateButtons(1);
+      if (currentSection === 0 || currentSection === 1) navigateButtons(1);
     } else if (gp.axes[0] < -0.5) {  // Move left with the left stick
-      if (currentSection === 0) navigateButtons(-1);
+      if (currentSection === 0 || currentSection === 1) navigateButtons(-1);
     }
 
     if (gp.axes[1] > 0.5) {  // Move down with the left stick
