@@ -147,7 +147,6 @@
   window.addEventListener('DOMContentLoaded', () => {
     // Store all the clickable buttons
     buttons = document.querySelectorAll('a.thumbnail');
-    // Remove focus on page load
   });
 
   // Remove mouse-triggered focus styling
@@ -231,4 +230,18 @@
   // Function to switch between button sections (vertical)
   function navigateSections(direction) {
     if (direction === 1 && currentSection === 0) {
-      // Move to the second
+      // Move to the second button section
+      currentSection = 1;
+      buttons[currentButtonIndex].classList.remove('focused');
+      document.querySelector('.button-wrapper2 a').classList.add('focused');  // Focus first button in the second section
+    } else if (direction === -1 && currentSection === 1) {
+      // Move back to the first button section
+      currentSection = 0;
+      document.querySelector('.button-wrapper2 a').classList.remove('focused');
+      buttons[currentButtonIndex].classList.add('focused');
+    }
+  }
+</script>
+
+</body>
+</html>
