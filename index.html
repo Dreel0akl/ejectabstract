@@ -73,7 +73,7 @@
     .footer-text {
       text-align: center;
       margin-bottom: 20px;
-      font-size: 14px;
+      font-size: 25px;  /* Updated V3 text size */
       color: #FFFFFF;
       font-family: 'Roboto', sans-serif;
     }
@@ -141,13 +141,13 @@
 <!-- Gamepad and Keyboard Support Script -->
 <script>
   let currentButtonIndex = 0;  // Track currently focused button
-  let currentSection = 0;      // 0 for button section, 1 for footer
+  let currentSection = 0;      // 0 for button section 1, 1 for button section 2
   let buttons = [];            // Store interactive buttons
 
   window.addEventListener('DOMContentLoaded', () => {
     // Store all the clickable buttons
     buttons = document.querySelectorAll('a.thumbnail');
-    buttons[currentButtonIndex].classList.add('focused');
+    // Remove focus on page load
   });
 
   // Remove mouse-triggered focus styling
@@ -165,10 +165,10 @@
         if (currentSection === 0) navigateButtons(-1);  // Move to the previous button
         break;
       case 'ArrowUp':
-        navigateSections(-1);  // Switch to top section (buttons)
+        navigateSections(-1);  // Switch between button sections
         break;
       case 'ArrowDown':
-        navigateSections(1);   // Switch to bottom section (footer)
+        navigateSections(1);   // Switch between button sections
         break;
       case 'Enter':
         if (currentSection === 0) {
@@ -228,21 +228,7 @@
     buttons[currentButtonIndex].classList.add('focused');
   }
 
-  // Function to switch between sections (vertical)
+  // Function to switch between button sections (vertical)
   function navigateSections(direction) {
     if (direction === 1 && currentSection === 0) {
-      // Move focus to the footer section
-      currentSection = 1;
-      document.querySelector('.footer-text').classList.add('focused');
-      buttons[currentButtonIndex].classList.remove('focused');
-    } else if (direction === -1 && currentSection === 1) {
-      // Move focus to the buttons section
-      currentSection = 0;
-      document.querySelector('.footer-text').classList.remove('focused');
-      buttons[currentButtonIndex].classList.add('focused');
-    }
-  }
-</script>
-
-</body>
-</html>
+      // Move to the second
