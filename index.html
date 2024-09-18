@@ -1,108 +1,95 @@
-<style>
-  /* Reset the margin and padding */
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    box-sizing: border-box; /* Ensures consistent sizing for elements */
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controller and Keyboard Support</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset the margin and padding */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      box-sizing: border-box;
+    }
 
-  /* Ensure the section takes full width and height with no white outline */
-  section {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-height: 100vh; /* Ensures the section covers the entire viewport height */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Spread content vertically */
-  }
+    /* Ensure the section takes full width and height with no white outline */
+    section {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100vh;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
-  /* Flex layout to center the content and avoid top white space */
-  .middle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0; /* Remove margin to avoid white space */
-    padding-top: 50px; /* Add padding to control spacing above the logo */
-  }
+    /* Center content */
+    .middle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 50px;
+    }
 
-  /* Ensure the buttons are correctly sized */
-  .button-wrapper {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 50px;
-    margin-bottom: 10px; /* Add small gap between buttons and image */
-  }
+    /* Buttons styling */
+    .button-wrapper, .button-wrapper2 {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 10px;
+    }
 
-  .button-wrapper a img {
-    height: 70px; /* Fixed height for buttons */
-    width: auto;
-  }
-  
     .button-wrapper2 {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
-    margin-bottom: 100px; /* Add small gap between buttons and image */
-  }
+      margin-bottom: 100px;
+    }
 
-  .button-wrapper2 a img {
-    height: 70px; /* Fixed height for buttons */
-    width: auto;
-  }
+    .button-wrapper a img, .button-wrapper2 a img {
+      height: 70px;
+      width: auto;
+    }
 
-  /* Ensure the image fills its container but stays within bounds */
-  .image-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    padding-bottom: 20px; /* Add a small gap between image and bottom */
-  }
+    /* Image wrapper */
+    .image-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 20px;
+    }
 
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .thumbnail { 
-top:50px; 
-left:35px; 
-display:block; 
-z-index:999; 
-cursor: pointer; 
--webkit-transition-property: all; 
--webkit-transition-duration: 0.3s; 
--webkit-transition-timing-function: ease; 
-} 
+    img {
+      max-width: 100%;
+      height: auto;
+    }
 
-/*change the number below to scale to the appropriate size*/ 
-.thumbnail:hover { 
-transform: scale(1.1); 
-
-}
-</style>
+    /* Footer text styling */
+    .footer-text {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #FFFFFF;
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+</head>
+<body>
 
 <section data-cid="slide-06-73ae1e5d" class="slide fade-6 kenBurns" style="background-image: url('https://github.com/Dreel0akl/ejectabstract/blob/main/BG.png?raw=true');">
   <div class="content">
     <div class="container">
       <div class="wrap">
         <div class="middle">
-          
-          <!-- edgeabs.png image (logo) -->
+          <!-- Logo -->
           <a href="#" title="logo">
             <img src="https://github.com/Dreel0akl/ejectabstract/blob/main/edgeabs.png?raw=true" alt="logo" style="margin-bottom: 20px;" />
           </a>
-          
-          <!-- The three buttons with PNG images below the logo -->
+
+          <!-- Button section -->
           <div class="button-wrapper">
             <a href="https://www.xbox.com/en-GB/cloud-gaming" class="thumbnail">
               <img src="https://github.com/Dreel0akl/ejectabstract/blob/main/xoclo.png?raw=true" />
@@ -115,53 +102,98 @@ transform: scale(1.1);
             </a>
             <a href="https://discord.com/channels/@me/" class="thumbnail">
               <img src="https://github.com/Dreel0akl/ejectabstract/blob/main/dsigo.png?raw=true" />
-              
             </a>
           </div>
-        </div>
-        
-                  <div class="button-wrapper2">
-           
+
+          <div class="button-wrapper2">
             <a href="https://www.disneyplus.com/en-gb/commerce/welcome-back" class="thumbnail">
               <img src="https://github.com/Dreel0akl/ejectabstract/blob/main/dnp.png?raw=true" />
-              </a>
+            </a>
             <a href="https://www.youtube.com/" class="thumbnail">
               <img src="https://github.com/Dreel0akl/ejectabstract/blob/main/you.png?raw=true" />
-              </a>
+            </a>
             <a href="https://www.pluto.tv/" class="thumbnail">
               <img src="https://github.com/Dreel0akl/ejectabstract/blob/main/pltv.png?raw=true" />
-              </a>
+            </a>
             <a href="https://www.spotify.com/" class="thumbnail">
               <img src="https://github.com/Dreel0akl/ejectabstract/blob/main/spty.png?raw=true" />
             </a>
           </div>
         </div>
-        
-        <!-- The large Obj.jpeg image -->
+
         <div class="image-wrapper">
           <img src="https://github.com/Dreel0akl/ejectabstract/blob/main/abs2.png?raw=true" alt="iPad App" class="ipad-6"/>
         </div>
-        
 
-        <script>
-          window.addEventListener('load', function() {
-            var audio = document.getElementById('background-audio');
-            audio.play().catch(function(error) {
-              console.log('Autoplay failed: ' + error);
-              // Optionally show a play button to the user if autoplay fails
-            });
-          });
-        </script>
-      
-              <!-- Hidden autoplay audio -->      
-      <audio controls autoplay>
-  <source src="https://github.com/Dreel0akl/ejectabstract/raw/main/soundcloud_495395682_audio.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-        
-  <div class="footer-text" style="text-align: center; margin-bottom: 20px; font-size: 50px; color: #FFFFFF; font-family: 'Roboto', sans-serif;">
-  V3
-   </div>
+        <!-- Footer text with V3 -->
+        <div class="footer-text">
+          V3
+        </div>
+
       </div>
     </div>
   </div>
+</section>
+
+<!-- Gamepad and Keyboard Support Script -->
+<script>
+  // Listen for gamepad connection
+  window.addEventListener("gamepadconnected", function(e) {
+    console.log("Gamepad connected:", e.gamepad);
+    alert("Gamepad connected: " + e.gamepad.id);
+    pollGamepad();
+  });
+
+  // Listen for gamepad disconnection
+  window.addEventListener("gamepaddisconnected", function(e) {
+    console.log("Gamepad disconnected:", e.gamepad);
+    alert("Gamepad disconnected: " + e.gamepad.id);
+  });
+
+  // Function to poll gamepad inputs
+  function pollGamepad() {
+    const gamepads = navigator.getGamepads();
+    const gp = gamepads[0];  // Assuming the first gamepad
+
+    if (!gp) {
+      console.log("No gamepad connected.");
+      return;
+    }
+
+    // Continuously check for input
+    requestAnimationFrame(pollGamepad);
+
+    // Check if button 0 (usually 'A' on Xbox) is pressed
+    if (gp.buttons[0].pressed) {
+      console.log("Button A pressed");
+      alert("Button A pressed");
+    }
+
+    // Add other buttons as needed (e.g., button 1 for 'B', button 2 for 'X', etc.)
+  }
+
+  // Keyboard support for arrow keys
+  window.addEventListener('keydown', function(e) {
+    switch (e.key) {
+      case 'ArrowUp':
+        console.log('Arrow Up key pressed');
+        alert('Arrow Up pressed');
+        break;
+      case 'ArrowDown':
+        console.log('Arrow Down key pressed');
+        alert('Arrow Down pressed');
+        break;
+      case 'ArrowLeft':
+        console.log('Arrow Left key pressed');
+        alert('Arrow Left pressed');
+        break;
+      case 'ArrowRight':
+        console.log('Arrow Right key pressed');
+        alert('Arrow Right pressed');
+        break;
+    }
+  });
+</script>
+
+</body>
+</html>
