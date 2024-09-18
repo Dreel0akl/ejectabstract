@@ -232,3 +232,17 @@
   function navigateSections(direction) {
     if (direction === 1 && currentSection === 0) {
       // Move focus to the footer section
+      currentSection = 1;
+      document.querySelector('.footer-text').classList.add('focused');
+      buttons[currentButtonIndex].classList.remove('focused');
+    } else if (direction === -1 && currentSection === 1) {
+      // Move focus to the buttons section
+      currentSection = 0;
+      document.querySelector('.footer-text').classList.remove('focused');
+      buttons[currentButtonIndex].classList.add('focused');
+    }
+  }
+</script>
+
+</body>
+</html>
